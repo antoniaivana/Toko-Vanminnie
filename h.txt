@@ -1,0 +1,103 @@
+            <!-- Produk 1 -->
+            <div class="product-card" data-id="1" data-category="dress" data-price="245000">
+                <div class="img-container">
+                    <img src="img/A-Line skirt.jpg" alt="Strawberry Milk Tweed Skirt" class="product-img" onclick="openDetailModal(1)">
+                </div>
+                <div class="product-info">
+                    <span class="product-cat">Dress / Skirt</span>
+                    <h3 class="product-title" onclick="openDetailModal(1)">Strawberry Milk Tweed Skirt</h3>
+                    <p class="product-price">Rp 245.000</p>
+                    <button class="btn-add-cart" onclick="addToCart(1)">Tambah ke Keranjang</button>
+                </div>
+            </div>
+
+            <!-- Produk 2 -->
+            <div class="product-card" data-id="2" data-category="tops" data-price="159000">
+                <div class="img-container">
+                    <img src="img/arme top.jpg" alt="Ribbon Candy Knit Top" class="product-img" onclick="openDetailModal(2)">
+                </div>
+                <div class="product-info">
+                    <span class="product-cat">Atasan / Tops</span>
+                    <h3 class="product-title" onclick="openDetailModal(2)">Ribbon Candy Knit Top</h3>
+                    <p class="product-price">Rp 159.000</p>
+                    <button class="btn-add-cart" onclick="addToCart(2)">Tambah ke Keranjang</button>
+                </div>
+            </div>
+
+            <!-- Produk 3 -->
+            <div class="product-card" data-id="3" data-category="dress" data-price="210000">
+                <div class="img-container">
+                    <img src="img/bubble skirt.jpg" alt="Blossom Glossy Pleated Skirt" class="product-img" onclick="openDetailModal(3)">
+                </div>
+                <div class="product-info">
+                    <span class="product-cat">Dress / Skirt</span>
+                    <h3 class="product-title" onclick="openDetailModal(3)">Blossom Glossy Pleated Skirt</h3>
+                    <p class="product-price">Rp 210.000</p>
+                    <button class="btn-add-cart" onclick="addToCart(3)">Tambah ke Keranjang</button>
+                </div>
+            </div>
+
+            <!-- Produk 4 -->
+            <div class="product-card" data-id="4" data-category="tops" data-price="175000">
+                <div class="img-container">
+                    <img src="img/leather mini.jpg" alt="Soft Pastel Puff Blouse" class="product-img" onclick="openDetailModal(4)">
+                </div>
+                <div class="product-info">
+                    <span class="product-cat">Atasan / Tops</span>
+                    <h3 class="product-title" onclick="openDetailModal(4)">Soft Pastel Puff Blouse</h3>
+                    <p class="product-price">Rp 175.000</p>
+                    <button class="btn-add-cart" onclick="addToCart(4)">Tambah ke Keranjang</button>
+                </div>
+            </div>
+
+            <!-- Produk 5 -->
+            <div class="product-card" data-id="5" data-category="dress" data-price="189000">
+                <div class="img-container">
+                    <img src="img/Ocia.jpg" alt="Hongdae Baby Pink Mini Skirt" class="product-img" onclick="openDetailModal(5)">
+                </div>
+                <div class="product-info">
+                    <span class="product-cat">Dress / Skirt</span>
+                    <h3 class="product-title" onclick="openDetailModal(5)">Hongdae Baby Pink Mini Skirt</h3>
+                    <p class="product-price">Rp 189.000</p>
+                    <button class="btn-add-cart" onclick="addToCart(5)">Tambah ke Keranjang</button>
+                </div>
+            </div>
+
+            <!-- Produk 6 -->
+            <div class="product-card" data-id="6" data-category="tops" data-price="165000">
+                <div class="img-container">
+                    <img src="img/rok ruffle mini.jpg" alt="Sakura Silk Button Top" class="product-img" onclick="openDetailModal(6)">
+                </div>
+                <div class="product-info">
+                    <span class="product-cat">Atasan / Tops</span>
+                    <h3 class="product-title" onclick="openDetailModal(6)">Sakura Silk Button Top</h3>
+                    <p class="product-price">Rp 165.000</p>
+                    <button class="btn-add-cart" onclick="addToCart(6)">Tambah ke Keranjang</button>
+                </div>
+            </div>
+
+            <!-- Produk 7 -->
+            <div class="product-card" data-id="7" data-category="outerwear" data-price="225000">
+                <div class="img-container">
+                    <img src="img/tie shoulder top .jpg" alt="Coquette Pink Ribbon Cardigan" class="product-img" onclick="openDetailModal(7)">
+                </div>
+                <div class="product-info">
+                    <span class="product-cat">Outerwear</span>
+                    <h3 class="product-title" onclick="openDetailModal(7)">Coquette Pink Ribbon Cardigan</h3>
+                    <p class="product-price">Rp 225.000</p>
+                    <button class="btn-add-cart" onclick="addToCart(7)">Tambah ke Keranjang</button>
+                </div>
+            </div>
+
+            <!-- Produk 8 -->
+            <div class="product-card" data-id="8" data-category="tops" data-price="195000">
+                <div class="img-container">
+                    <img src="img/unega top.jpg" alt="Neon Pink Sweetheart Corset Top" class="product-img" onclick="openDetailModal(8)">
+                </div>
+                <div class="product-info">
+                    <span class="product-cat">Atasan / Tops</span>
+                    <h3 class="product-title" onclick="openDetailModal(8)">Neon Pink Sweetheart Corset Top</h3>
+                    <p class="product-price">Rp 195.000</p>
+                    <button class="btn-add-cart" onclick="addToCart(8)">Tambah ke Keranjang</button>
+                </div>
+            </div>
