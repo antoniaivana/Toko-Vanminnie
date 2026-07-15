@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K-Style Fashion | Korean Clothing Store</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXX-Y"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-XXXXX-Y');
+    </script>
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo">VANMINNIE<span>.</span></a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#katalog">Katalog</a></li>
+                <li><a href="#checkout-section">Checkout</a></li>
+            </ul>
+            <div class="nav-icons">
+                <div class="cart-icon" onclick="toggleCartModal()">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span id="cart-count">0</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO BANNER -->
+    <header id="home" class="hero">
+        <div class="hero-content">
+            <h1>Temukan K-Fashion Terbaikmu</h1>
+            <p>Koleksi pakaian Korea modern, minimalis, dan elegan untuk melengkapi gaya harianmu.</p>
+            <a href="#katalog" class="btn-hero">Belanja Sekarang</a>
+        </div>
+    </header>
+
+    <!-- KATALOG PRODUK -->
+    <section id="katalog" class="catalog-section">
+        <h2>Koleksi Pakaian Korea</h2>
+        <p class="section-subtitle">Pilih gaya favoritmu dari tren terbaru Seoul</p>
+
+        <!-- Search & Filter Controls -->
+        <div class="filter-container">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="search-input" placeholder="Cari produk...">
+            </div>
+            <div class="select-box">
+                <select id="category-filter">
+                    <option value="all">Semua Kategori</option>
+                    <option value="outerwear">Outerwear</option>
+                    <option value="tops">Atasan / Tops</option>
+                    <option value="dress">Dress / Skirt</option>
+                </select>
+            </div>
+            <div class="select-box">
+                <select id="price-filter">
+                    <option value="all">Semua Harga</option>
+                    <option value="low">Di bawah Rp 200.000</option>
+                    <option value="high">Rp 200.000 Ke atas</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Grid Produk -->
+        <div class="products-grid" id="products-grid">
+
+        </div>
+    </section>
+
+    <!-- MODAL DETAIL PRODUK -->
+    <div id="detail-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeDetailModal()">&times;</span>
+            <div class="modal-body" id="modal-product-body">
+                <!-- Preview Struktur jika JS Belum Aktif -->
+                <div class="modal-detail-wrapper">
+                    <img src="https://images.unsplash.com/photo-1583496661160-fb48862c4a4e?q=80&w=500" alt="Product Image">
+                    <div class="modal-detail-info">
+                        <h2>Nama Produk Pilihan</h2>
+                        <p class="price">Rp 0</p>
+                        <p class="desc">Koleksi atasan/bawahan berkualitas tinggi dengan desain potongan siluet khas tren *streetwear* Seoul yang sangat nyaman digunakan sehari-hari.</p>
+                        <button class="btn-add-cart">Tambah ke Keranjang</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL SIDEBAR KERANJANG BELANJA -->
+    <div id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-sidebar-header">
+            <h3>Keranjang Belanja</h3>
+            <span class="close-cart" onclick="toggleCartModal()">&times;</span>
+        </div>
+        <div class="cart-items-container" id="cart-items">
+            <!-- Item kosong placeholder -->
+            <p class="empty-cart-text">Keranjang belanja Anda masih kosong.</p>
+        </div>
+        <div class="cart-sidebar-footer">
+            <div class="total-price-box">
+                <span>Total:</span>
+                <span id="cart-total">Rp 0</span>
+            </div>
+            <a href="#checkout-section" class="btn-checkout" onclick="toggleCartModal()">Lanjut ke Checkout</a>
+        </div>
+    </div>
+
+    <!-- HALAMAN CHECKOUT & SIMULASI PEMBAYARAN -->
+    <section id="checkout-section" class="checkout-section">
+        <div class="section-title-wrap">
+            <h2>Formulir Checkout</h2>
+            <p>Lengkapi informasi pengiriman untuk menyelesaikan pesanan Anda</p>
+        </div>
+        <div class="checkout-container">
+            <form id="checkout-form" onsubmit="handleCheckout(event)">
+                <div class="form-group">
+                    <label for="name">Nama Lengkap</label>
+                    <input type="text" id="name" required placeholder="Masukkan nama lengkap Anda">
+                </div>
+                <div class="form-group">
+                    <label for="address">Alamat Pengiriman</label>
+                    <textarea id="address" required placeholder="Alamat lengkap penyerahan paket rumah Anda"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="payment">Metode Pembayaran (Simulasi)</label>
+                    <select id="payment" required>
+                        <option value="">-- Pilih Pembayaran --</option>
+                        <option value="Virtual Account">Bank Transfer / Virtual Account</option>
+                        <option value="E-Wallet">E-Wallet (Dana / OVO / GoPay)</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-submit-order">Selesaikan Pembayaran</button>
+            </form>
+
+            <div class="checkout-summary">
+                <h3>Ringkasan Pesanan</h3>
+                <div id="checkout-summary-items">
+                    <!-- Ringkasan item dinamis -->
+                </div>
+                <hr>
+                <div class="summary-total">
+                    <span>Grand Total:</span>
+                    <span id="checkout-grand-total">Rp 0</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AREA STRUK PEMBAYARAN PITA PINK GLOSSY -->
+    <div class="invoice-outer-wrapper">
+        <section id="invoice-section" class="invoice-ribbon">
+            <div class="ribbon-gloss-overlay"></div>
+            <div class="invoice-header">
+                <h2>K-STYLE FASHION</h2>
+                <p class="subtitle">Seoul Vibe, Your Style</p>
+                <div class="receipt-divider"></div>
+                <p class="meta">Tanggal: <span id="inv-date">15/07/2026</span> <br> No. Nota: <span id="inv-number">#KS-99321</span></p>
+            </div>
+            
+            <div class="invoice-details">
+                <p><strong>Nama Pembeli:</strong> <span id="inv-name">-</span></p>
+                <p><strong>Pembayaran:</strong> <span id="inv-method">-</span></p>
+                <p><strong>Alamat:</strong> <span id="inv-address">-</span></p>
+            </div>
+            
+            <div id="inv-items" class="invoice-items">
+                <!-- Rincian Item Belanjaan -->
+            </div>
+            
+            <div class="invoice-total">
+                <span>TOTAL BELANJA</span>
+                <span id="inv-total">Rp 0</span>
+            </div>
+            
+            <div class="invoice-footer">
+                <p>~ Kamsahamnida / Terima Kasih ~</p>
+            </div>
+        </section>
+        
+        <div class="print-btn-container">
+            <button onclick="window.print()" class="btn-print-ribbon">
+                <i class="fas fa-print"></i> Cetak Struk Belanja
+            </button>
+        </div>
+    </div>
+
+    <!-- FOOTER LENGKAP -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-box">
+                <h3>K-STYLE<span>.</span></h3>
+                <p>Destinasi fashion Korea nomor satu di Indonesia yang mengutamakan kualitas tinggi, estetika trendi, dan kenyamanan maksimal harian Anda.</p>
+            </div>
+            <div class="footer-box">
+                <h4>Navigasi</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#katalog">Katalog</a></li>
+                    <li><a href="#checkout-section">Checkout</a></li>
+                </ul>
+            </div>
+            <div class="footer-box">
+                <h4>Hubungi Kami</h4>
+                <p><i class="fas fa-envelope"></i> support@kstyle.com</p>
+                <p><i class="fas fa-phone"></i> +62 812-3456-7890</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 K-Style Fashion. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
